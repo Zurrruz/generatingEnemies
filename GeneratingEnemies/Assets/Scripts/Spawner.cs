@@ -1,11 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Transform _finish;
-    [SerializeField] private Enemy _enemyPrefab;
-
+    [SerializeField] private List<SpawnPoint> _spawnPoints;
     [SerializeField] private float _timeSpawn;
 
     private WaitForSeconds _timeout;
@@ -17,15 +16,15 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(CreateEnemy());
+        StartCoroutine(StartSpawn());
     }
 
-    private IEnumerator CreateEnemy()
+    private IEnumerator StartSpawn()
     {
         while (enabled)
         {            
-            Enemy enemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-            enemy.SetDirectionMove(_finish);
+            foreach (SpawnPoint spawnPoint in _spawnPoints)
+                spawnPoint.CreateEnemy();
 
             yield return _timeout;
         }

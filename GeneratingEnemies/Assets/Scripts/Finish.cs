@@ -5,7 +5,7 @@ public class Finish : MonoBehaviour
 {
     [SerializeField] private List<Transform> _moveSpots;
     [SerializeField] private float _speed;
-    [SerializeField] float _minDistansSpot;
+    [SerializeField] private float _minDistansSpot;
 
     private int _spot = 0;
     private int _stepForward = 1;
@@ -25,12 +25,18 @@ public class Finish : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _moveSpots[_spot].position, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(
+            transform.position, 
+            _moveSpots[_spot].position, 
+            _speed * Time.deltaTime);
     }
 
     private void ChangeSpot()
     {
-        if (Vector3.Distance(transform.position, _moveSpots[_spot].position) < _minDistansSpot)
+        Vector3 offset = _moveSpots[_spot].position - transform.position;
+        float sqrLen = offset.sqrMagnitude;
+
+        if (sqrLen < _minDistansSpot * _minDistansSpot)
         {
             if (_spot == _moveSpots.Count - 1)
                 _nextSpot = _stepBack;

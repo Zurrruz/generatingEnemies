@@ -597,12 +597,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107451061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157759a388b5a1840a3ed4b9e53db370, type: 3}
+  m_Script: {fileID: 11500000, guid: b101a241e8e077d488382308f0e06c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _finish: {fileID: 828908037}
   _enemyPrefab: {fileID: 1467865637967533842, guid: f1148536a8bc7674ba041a12b43ec922, type: 3}
-  _timeSpawn: 2
+  _finish: {fileID: 828908037}
 --- !u!1 &1121253568
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,12 +873,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1306484048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157759a388b5a1840a3ed4b9e53db370, type: 3}
+  m_Script: {fileID: 11500000, guid: b101a241e8e077d488382308f0e06c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _finish: {fileID: 1121253573}
   _enemyPrefab: {fileID: 1467865637967533842, guid: 06b61079e00e09248872a5bb88de79f9, type: 3}
-  _timeSpawn: 2
+  _finish: {fileID: 1121253573}
 --- !u!1 &1709395980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,12 +1105,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1838946674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157759a388b5a1840a3ed4b9e53db370, type: 3}
+  m_Script: {fileID: 11500000, guid: b101a241e8e077d488382308f0e06c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _finish: {fileID: 1736218209}
   _enemyPrefab: {fileID: 1467865637967533842, guid: c502462a9ba2554408fe0c55d290bbac, type: 3}
-  _timeSpawn: 2
+  _finish: {fileID: 1736218209}
 --- !u!1 &1844630270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844630272}
+  - component: {fileID: 1844630273}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1147,6 +1145,23 @@ Transform:
   - {fileID: 1107451062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1844630273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844630270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157759a388b5a1840a3ed4b9e53db370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 1838946676}
+  - {fileID: 1306484050}
+  - {fileID: 1107451063}
+  _timeSpawn: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
