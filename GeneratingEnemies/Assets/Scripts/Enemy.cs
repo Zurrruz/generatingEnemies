@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         Move();
-        completesPath();
+        CompletesPath();
     }
 
     public void SetDirectionMove(Transform spot)
@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void completesPath()
+    private void CompletesPath()
     {
         Vector3 offset = _spot.position - transform.position;
         float sqrLen = offset.sqrMagnitude;
