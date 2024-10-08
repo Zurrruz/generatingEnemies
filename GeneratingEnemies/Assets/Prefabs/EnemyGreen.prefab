@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1993140522206494844}
   - component: {fileID: 1467865637967533842}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,4 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f2654e77cf6d74e9bd0c5ae3b8961b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 2
+  _minDistansSpot: 0.2

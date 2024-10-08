@@ -2,22 +2,30 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float _speed;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _minDistansSpot;
 
-    private Vector3 _direction;
+    private Transform _spot;
 
     private void Update()
     {
         Move();
+        Die();
     }
 
-    public void SetDirectionMove(Vector3 direction)
+    public void SetDirectionMove(Transform spot)
     {
-        _direction = direction;
+        _spot = spot;
     }    
 
     private void Move()
     {
-        transform.position += _direction * _speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, _spot.position, _speed * Time.deltaTime);
+    }
+
+    private void Die()
+    {
+        if (Vector3.Distance(transform.position, _spot.position) < _minDistansSpot)
+            Destroy(gameObject);
     }
 }
